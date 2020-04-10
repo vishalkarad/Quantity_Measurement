@@ -61,4 +61,13 @@ public class QuantityMeasurementTest {
             Assert.assertEquals(QuantityMeasurementException.ExceptionType.NULL_POINTER_EXCEPTION, e.type);
         }
     }
+    @Test
+    public void givenInchAndInchReference_WhenCompair_ThenTrue() throws QuantityMeasurementException {
+        Double feet = 2.0;
+        Double value = feet;
+        UnitComparetor unitComparetor = new UnitComparetor(value,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(value,Length.INCH);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
 }
