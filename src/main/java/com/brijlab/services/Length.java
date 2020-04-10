@@ -1,7 +1,7 @@
 package com.brijlab.services;
 
 public enum Length {
-    FEET(  12), INCH(1 );
+    FEET(  12), INCH(1 ),YARD (36);
 
     public final double value;
 
