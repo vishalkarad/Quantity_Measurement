@@ -65,8 +65,17 @@ public class QuantityMeasurementTest {
     public void givenInchAndInchReference_WhenCompair_ThenTrue() throws QuantityMeasurementException {
         Double feet = 2.0;
         Double value = feet;
+        Double value1 = feet;
         UnitComparetor unitComparetor = new UnitComparetor(value,Length.INCH);
-        UnitComparetor unitComparetor2 = new UnitComparetor(value,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(value1,Length.INCH);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenInchAndInch_WhenSameType_ThenTrue() throws QuantityMeasurementException {
+        double feet1 = 24,feet2 = 24;
+        UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(feet2,Length.INCH);
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
