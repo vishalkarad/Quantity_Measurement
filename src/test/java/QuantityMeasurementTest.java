@@ -36,4 +36,12 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
+    public void givenFeetAndFeet_WhenSameType_ThenTrue() throws QuantityMeasurementException {
+        double feet1 = 2,feet2 = 2;
+        UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.FEET);
+        UnitComparetor unitComparetor2 = new UnitComparetor(feet2,Length.FEET);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
 }
