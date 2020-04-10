@@ -1,13 +1,15 @@
 package com.brijlab.services;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class UnitComparetor {
     private double value;
 
-    public UnitComparetor(double value,Length length) {
-        this.value = compare(value,length);
+    public UnitComparetor( double value, Length length) {
+        this.value = compare(value, length);
     }
+
     public double compare(double value,Length length){
         return value * length.getValue();
     }
