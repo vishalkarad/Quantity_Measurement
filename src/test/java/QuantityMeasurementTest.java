@@ -1,15 +1,15 @@
 import com.brijlab.services.QuantityMeasurementMain;
 import org.junit.Assert;
 import org.junit.Test;
-
 public class QuantityMeasurementTest {
 
     QuantityMeasurementMain quantityMeasurement = new QuantityMeasurementMain();
+
     @Test
-    public void givenFitAndLength_WhenCompair_ThenTrue() {
-        int fit = 2;
-        int inch = 24;
-        boolean result = quantityMeasurement.checkQuantity(fit,inch);
+    public void givenFitAndLengthIsZero_WhenCompair_ThenTrue() {
+        int feet1 = 0;
+        int feet2 = 0;
+        boolean result = quantityMeasurement.checkFeetQuantity(feet1,feet2);
         Assert.assertEquals(true,result);
     }
 }
