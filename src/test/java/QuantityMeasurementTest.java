@@ -95,4 +95,12 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
+    public void givenFeetAndInch_WhenNotEqulTo1_1_ThenFalse() throws QuantityMeasurementException {
+        double feet1 = 1.0,inch = 1.0;
+        UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.FEET);
+        UnitComparetor unitComparetor2 = new UnitComparetor(inch,Length.INCH);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(false,result);
+    }
 }
