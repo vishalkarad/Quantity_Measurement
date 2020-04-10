@@ -151,4 +151,12 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void givenInchAndYD_When36InchEqulsTo1YD_ThenTrue() throws QuantityMeasurementException {
+        double inch = 36,yard = 1;
+        UnitComparetor unitComparetor = new UnitComparetor(inch,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(yard,Length.YARD);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
 }
