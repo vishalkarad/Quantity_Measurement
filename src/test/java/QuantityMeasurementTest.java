@@ -135,5 +135,13 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
+    public void givenFeetAndYD_When1FeetNotEqulsTo1YD_ThenFalse() throws QuantityMeasurementException {
+        double feet1 = 1,yard = 1;
+        UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.FEET);
+        UnitComparetor unitComparetor2 = new UnitComparetor(yard,Length.YARD);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(false,result);
+    }
 
 }
