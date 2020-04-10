@@ -10,13 +10,13 @@ import java.io.IOException;
 public class QuantityMeasurementTest {
 
        QuantityMeasurementMain quantityMeasurement = new QuantityMeasurementMain();
-       @Test
-       public void givenFeetAndLengthIsZero_WhenCompair_ThenTrue() throws QuantityMeasurementException {
-           UnitComparetor unitComparetor = new UnitComparetor(0,Length.FEET);
-           UnitComparetor unitComparetor2 = new UnitComparetor(0,Length.FEET);
-           boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
-           Assert.assertEquals(true,result);
-       }
+    @Test
+    public void givenFeetAndLengthIsZero_WhenCompair_ThenTrue() throws QuantityMeasurementException {
+        UnitComparetor unitComparetor = new UnitComparetor(0,Length.FEET);
+        UnitComparetor unitComparetor2 = new UnitComparetor(0,Length.FEET);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
     @Test
     public void givenFeetnull_WhenCompair_ThenFalse() {
         UnitComparetor converterInch = new UnitComparetor(0, Length.FEET);
@@ -50,5 +50,15 @@ public class QuantityMeasurementTest {
         UnitComparetor unitComparetor2 = new UnitComparetor(feet2,Length.FEET);
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenInchtAndInch_WhenCompairNull_ThenFalse() throws QuantityMeasurementException {
+        UnitComparetor converterInch = new UnitComparetor(0, Length.INCH);
+        quantityMeasurement = new QuantityMeasurementMain();
+        try {
+            boolean result = quantityMeasurement.compare(converterInch, null);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals(QuantityMeasurementException.ExceptionType.NULL_POINTER_EXCEPTION, e.type);
+        }
     }
 }
