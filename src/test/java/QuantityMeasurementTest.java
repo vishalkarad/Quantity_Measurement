@@ -159,4 +159,12 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
+    public void givenYDAndFeet_When1YDEqulsTo3Feet_ThenTrue() throws QuantityMeasurementException {
+        double feet = 3,yard = 1;
+        UnitComparetor unitComparetor = new UnitComparetor(feet,Length.FEET);
+        UnitComparetor unitComparetor2 = new UnitComparetor(yard,Length.YARD);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
 }
