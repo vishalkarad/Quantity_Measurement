@@ -231,5 +231,12 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
         Assert.assertEquals(7.56,result,0);
     }
-
+    @Test
+    public void givenLitresAndMl_WhenAdditio_ThenReturResult() throws QuantityMeasurementException {
+        double ml = 1000,litre = 1;
+        UnitComparetor unitComparetor = new UnitComparetor(litre,Length.LITRE);
+        UnitComparetor unitComparetor2 = new UnitComparetor(ml,Length.ML);
+        double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
+        Assert.assertEquals(2,result,0);
+    }
 }
