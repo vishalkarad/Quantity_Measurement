@@ -1,24 +1,14 @@
 package com.brijlab.services;
 
-import java.io.IOException;
-import java.text.DecimalFormat;
-import java.util.Objects;
-
 public class UnitComparetor {
     private double value;
-    private static DecimalFormat df2 = new DecimalFormat("#.##");
     public UnitComparetor( double value, Length length) {
         this.value = compare(value, length);
     }
-
+    // return calculated value
     public double compare(double value,Length length){
-
-
             return value * length.getValue();
-
-
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
