@@ -9,6 +9,11 @@ public class UnitComparetor {
     public double compare(double value,Length length){
             return value * length.getValue();
     }
+
+    public double getValue() {
+        return value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
