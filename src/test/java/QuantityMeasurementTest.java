@@ -183,4 +183,12 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
         Assert.assertEquals(4,result,0);
     }
+    @Test
+    public void givenFeetAndInch_WhenAddition_ThenTrue() throws QuantityMeasurementException {
+        double feet = 1,inch =2;
+        UnitComparetor unitComparetor = new UnitComparetor(feet,Length.FEET);
+        UnitComparetor unitComparetor2 = new UnitComparetor(inch,Length.INCH);
+        double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
+        Assert.assertEquals(14,result,0);
+    }
 }
