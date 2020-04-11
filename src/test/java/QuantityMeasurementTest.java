@@ -223,4 +223,13 @@ public class QuantityMeasurementTest {
         Boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
+    public void givenValuemInLiter_WhenAdditio_ThenReturResult() throws QuantityMeasurementException {
+        double gallon = 1,litre = 3.78;
+        UnitComparetor unitComparetor = new UnitComparetor(litre,Length.LITRE);
+        UnitComparetor unitComparetor2 = new UnitComparetor(gallon,Length.GALLON);
+        double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
+        Assert.assertEquals(7.56,result,0);
+    }
+
 }
