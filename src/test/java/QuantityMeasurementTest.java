@@ -199,4 +199,12 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
         Assert.assertEquals(24,result,0);
     }
+    @Test
+    public void givenInchAndCentimeter_WhenAddition_ThenTrue() throws QuantityMeasurementException {
+        double inch = 2,cm = 2.5;
+        UnitComparetor unitComparetor = new UnitComparetor(inch,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(cm,Length.CENTIMETER);
+        double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
+        Assert.assertEquals(3,result,0);
+    }
 }
