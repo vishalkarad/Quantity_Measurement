@@ -239,4 +239,20 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
         Assert.assertEquals(2,result,0);
     }
+    @Test
+    public void givenKgAndGrams_WhenCompare_ThenTrue() throws QuantityMeasurementException {
+        double kg = 1,grams = 1000;
+        UnitComparetor unitComparetor = new UnitComparetor(kg,Length.KILOGRAMS);
+        UnitComparetor unitComparetor2 = new UnitComparetor(grams,Length.GRAM);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenTonneAndkgs_WhenCompare_ThenTrue() throws QuantityMeasurementException {
+        double kgs = 1000,tonne = 1;
+        UnitComparetor unitComparetor = new UnitComparetor(kgs,Length.KILOGRAMS);
+        UnitComparetor unitComparetor2 = new UnitComparetor(tonne,Length.TONNE);
+        boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
 }
