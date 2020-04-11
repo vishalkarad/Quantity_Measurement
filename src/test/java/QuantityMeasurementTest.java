@@ -175,4 +175,12 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
+    public void givenTwoLingth_WhenAddition_ThenTrue() throws QuantityMeasurementException {
+        double inch1 = 2,inch2 =2;
+        UnitComparetor unitComparetor = new UnitComparetor(inch1,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(inch2,Length.INCH);
+        double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
+        Assert.assertEquals(4,result,0);
+    }
 }
