@@ -7,4 +7,8 @@ public class QuantityMeasurementMain {
             throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.NULL_POINTER_EXCEPTION, "Null Object");
         return unitComparetor1.equals(unitComparetor2);
     }
+
+    public double addition(UnitComparetor unitComparetor, UnitComparetor unitComparetor2) {
+        return unitComparetor.getValue()+unitComparetor2.getValue();
+    }
 }
