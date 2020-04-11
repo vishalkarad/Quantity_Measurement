@@ -207,4 +207,20 @@ public class QuantityMeasurementTest {
         double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
         Assert.assertEquals(3,result,0);
     }
+    @Test
+    public void givenGallonAndLitres_WhenCompair_ThenTrue() throws QuantityMeasurementException {
+        double gallon = 1,litre = 3.78;
+        UnitComparetor unitComparetor = new UnitComparetor(gallon,Length.GALLON);
+        UnitComparetor unitComparetor2 = new UnitComparetor(litre,Length.LITRE);
+        Boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenLitrAndMl_WhenCompair_ThenTrue() throws QuantityMeasurementException {
+        double litre = 1,ml = 1000;
+        UnitComparetor unitComparetor = new UnitComparetor(litre,Length.LITRE);
+        UnitComparetor unitComparetor2 = new UnitComparetor(ml,Length.ML);
+        Boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
+        Assert.assertEquals(true,result);
+    }
 }
