@@ -255,4 +255,12 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
+    public void givenTonneAndgs_WhenAddition_ThenTrue() throws QuantityMeasurementException {
+        double gm = 1000,tonne = 1;
+        UnitComparetor unitComparetor = new UnitComparetor(gm,Length.GRAM);
+        UnitComparetor unitComparetor2 = new UnitComparetor(tonne,Length.TONNE);
+        double result = quantityMeasurement.addition(unitComparetor,unitComparetor2);
+        Assert.assertEquals(1001,result,0);
+    }
 }
