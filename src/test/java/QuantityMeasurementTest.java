@@ -5,13 +5,11 @@ import com.brijlab.services.UnitComparetor;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.IOException;
-
 public class QuantityMeasurementTest {
 
        QuantityMeasurementMain quantityMeasurement = new QuantityMeasurementMain();
     @Test
-    public void givenFeetAndLengthIsZero_WhenCompair_ThenTrue() throws QuantityMeasurementException {
+    public void givenFeetAndFeetIsZero_WhenCompair_ThenTrue() throws QuantityMeasurementException {
         UnitComparetor unitComparetor = new UnitComparetor(0,Length.FEET);
         UnitComparetor unitComparetor2 = new UnitComparetor(0,Length.FEET);
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
@@ -44,6 +42,7 @@ public class QuantityMeasurementTest {
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
+    @Test
     public void givenFeetAndFeet_WhenSameValue_ThenTrue() throws QuantityMeasurementException {
         double feet1 = 5.0,feet2 = 5.0;
         UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.FEET);
@@ -52,7 +51,7 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenInchtAndInch_WhenCompairNull_ThenFalse() throws QuantityMeasurementException {
+    public void givenInchtAndInch_WhenCompairNull_ThenFalse()  {
         UnitComparetor converterInch = new UnitComparetor(0, Length.INCH);
         quantityMeasurement = new QuantityMeasurementMain();
         try {
@@ -73,25 +72,25 @@ public class QuantityMeasurementTest {
     }
     @Test
     public void givenInchAndInch_WhenSameType_ThenTrue() throws QuantityMeasurementException {
-        double feet1 = 24,feet2 = 24;
-        UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.INCH);
-        UnitComparetor unitComparetor2 = new UnitComparetor(feet2,Length.INCH);
+        double inch = 24,inch1 = 24;
+        UnitComparetor unitComparetor = new UnitComparetor(inch,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(inch1,Length.INCH);
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenInchAndInch_WhenSameValue_ThenTrue() throws QuantityMeasurementException {
-        double feet1 = 60.0,feet2 = 60.0;
-        UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.FEET);
-        UnitComparetor unitComparetor2 = new UnitComparetor(feet2,Length.FEET);
+        double inch1 = 60.0,inch2 = 60.0;
+        UnitComparetor unitComparetor = new UnitComparetor(inch1,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(inch2,Length.INCH);
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenFeetAndInch_WhenZero_ThenTrue() throws QuantityMeasurementException {
-        double feet1 = 0.0,feet2 = 0.0;
+        double feet1 = 0.0,inch = 0.0;
         UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.FEET);
-        UnitComparetor unitComparetor2 = new UnitComparetor(feet2,Length.INCH);
+        UnitComparetor unitComparetor2 = new UnitComparetor(inch,Length.INCH);
         boolean result = quantityMeasurement.compare(unitComparetor,unitComparetor2);
         Assert.assertEquals(true,result);
     }
@@ -120,7 +119,7 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenFeetAndInch_When12InchtEqulsTo1Feet_ThenTrue() throws QuantityMeasurementException {
+    public void givenFeetAndInch_When12InchEqulsTo1Feet_ThenTrue() throws QuantityMeasurementException {
         double feet1 = 1.0,inch = 12.0;
         UnitComparetor unitComparetor2 = new UnitComparetor(inch,Length.INCH);
         UnitComparetor unitComparetor = new UnitComparetor(feet1,Length.FEET);
@@ -168,7 +167,7 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenInchAndCentimeter_When1InchTo5Centimeter_ThenTrue() throws QuantityMeasurementException {
+    public void givenInchAndCentimeter_When2InchTo5Centimeter_ThenTrue() throws QuantityMeasurementException {
         double inch = 2,centimeter = 5;
         UnitComparetor unitComparetor = new UnitComparetor(inch,Length.INCH);
         UnitComparetor unitComparetor2 = new UnitComparetor(centimeter,Length.CENTIMETER);
@@ -176,7 +175,7 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenTwoLingth_WhenAddition_ThenTrue() throws QuantityMeasurementException {
+    public void givenTwoLength_WhenAddition_ThenTrue() {
         double inch1 = 2,inch2 =2;
         UnitComparetor unitComparetor = new UnitComparetor(inch1,Length.INCH);
         UnitComparetor unitComparetor2 = new UnitComparetor(inch2,Length.INCH);
